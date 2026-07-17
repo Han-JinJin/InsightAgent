@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# FastAPI generated files
+backend/uploads/
+backend/reports/
+backend/*.log
+
+# .NET / Blazor
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.rsuser
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

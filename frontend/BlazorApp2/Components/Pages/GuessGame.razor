@@ -1,0 +1,42 @@
+﻿@page "/guess"
+@rendermode InteractiveServer
+
+<h1>🎮 猜数字小游戏</h1>
+
+<p>请猜一个 1~100 的数字</p>
+
+<input type="number" @bind="UserGuess" />
+
+<button @onclick="CheckGuess">
+    猜一猜
+</button>
+
+<p>@Message</p>
+
+<p>猜测次数：@Count</p>
+
+@code {
+
+    private int TargetNumber = Random.Shared.Next(1, 101);
+    private int UserGuess;
+    private string Message = "";
+    private int Count = 0;
+
+    private void CheckGuess()
+    {
+        Count++;
+
+        if (UserGuess < TargetNumber)
+        {
+            Message = "太小了";
+        }
+        else if (UserGuess > TargetNumber)
+        {
+            Message = "太大了";
+        }
+        else
+        {
+            Message = $"恭喜猜中了！答案是 {TargetNumber}";
+        }
+    }
+}
